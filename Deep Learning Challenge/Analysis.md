@@ -59,25 +59,25 @@ Removed variables are:
         * Optimizer: adam
         * Results: Loss: 0.9265857338905334, Accuracy: 0.7149854302406311
            
-    * Optimization 1
-        * Neurons: The initial input layer for this optimization does not include dummies for ASK_AMT, so the total number of features is significantly less than the original model. I added an additional neuron to hidden layer 1 simply to see what would happen, and added an additional hidden layer to see if that produced more accurate results. 
-            * Initial input layer: 49
-            * Hidden layer 1: 50
-            * Hidden layer 2: 30
-            * Hidden layer 3: 10
-            * Total: 139
-        * Layers: 4 (initial input layer + 3 hidden layers)
-        * Activation functions: I tried relu in the initial and first 2 hidden layers but swtiched to sigmoid to see if that would help increase accuracy. 
-            * Initial input layer: relu
-            * Hidden layer 1: relu
-            * Hidden layer 2: relu
-            * Hidden layer 3: sigmoid
-        * Optimizer: adam
-        * Results: Loss: 0.5614355802536011, Accuracy: 0.7325947284698486
+    ### Optimization 1
+    * Neurons: The initial input layer for this optimization does not include dummies for ASK_AMT, so the total number of features is significantly less than the original model. I added an additional neuron to hidden layer 1 simply to see what would happen, and added an additional hidden layer to see if that produced more accurate results. 
+     * Initial input layer: 49
+     * Hidden layer 1: 50
+     * Hidden layer 2: 30
+     * Hidden layer 3: 10
+     * Total: 139
+     * Layers: 4 (initial input layer + 3 hidden layers)
+     * Activation functions: I tried relu in the initial and first 2 hidden layers but swtiched to sigmoid to see if that would help increase accuracy. 
+     * Initial input layer: relu
+     * Hidden layer 1: relu
+     * Hidden layer 2: relu
+     * Hidden layer 3: sigmoid
+     * Optimizer: adam
+     * Results: Loss: 0.5614355802536011, Accuracy: 0.7325947284698486
 
     The results for Optimization 1 are 2 points higher than the original model. 
 
-    * Optimization 2
+    ### Optimization 2
         * Neurons: I added more CLASSIFICATION and APPLICATION_TYPE features, but removed ASK_AMT and SPECIAL_CONSIDERATIONS to see if this would have any impact on the results. I started with 67 features, which I used for the number of neurons in the initial input layer. 
             * Initial input layer: 67
             * Hidden layer 1: 68
@@ -95,7 +95,7 @@ Removed variables are:
 
 The accuracy for Optimization 2 is better than the original model but worse than Optimization 1. 
 
-    * Optimization 3
+    ### Optimization 3
         * Neurons: I dropped CLASSIFICATION, ASK_AMT and SPECIAL_CONSIDERATIONS to see if this would have any impact on the results. I kept the same APPLICATION_TYPE features as Optimizer 2. I started with 67 features, which I used for the number of neurons in the initial input layer. 
             * Initial input layer: 30
             * Hidden layer 1: 42
@@ -113,7 +113,7 @@ The accuracy for Optimization 2 is better than the original model but worse than
     
     The results were slightly worse than Optimization 2. 
 
-    * Optimization 4
+    ### Optimization 4
         * Neurons: I used the same preproccessing as Optimization 2 for a total of 70 features. I doubled the number of neurons in the first input layer because the best optimizations use 2-3 times the number of features. I added 2 additional layers to see if I could get more accurate results. 
             * Initial input layer: 70
             * Hidden layer 1: 140
