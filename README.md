@@ -5,7 +5,7 @@
 This project was created as part of a data anlaytics bootcamp. The goal is to use Python and deep learning to build a neural network model that can predict which venturs who apply for funding will be successful. 
 
 Relevant Files:
-- [Starter Code Jupyter Notebook](deep-learning-challenge/Deep Learning Challenge/Starter_Code.ipynb)
+- [Starter Code Jupyter Notebook](Starter_Code.ipynb)
     -This contains the original neural network model.
 - [AlphabetSoupCharity_Optimization Jupyter Notebook](Deep Learning Challenge/AlphabetSoupCharity_Optimization.ipynb.ipynb)
     -This contains 4 attempts to optimize the neural network to see if accuracy can be improved. 
