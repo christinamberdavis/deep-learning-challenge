@@ -45,7 +45,7 @@ Removed variables are:
 ## Compiling, Training, and Evaluating the Model
 
 * How many neurons, layers, and activation functions did you select for your neural network model, and why?
-    * Original Model
+    ### Original Model
         * Neurons: The initial input layer includes dummies for each ASK_AMT, which makde for a very large feature set. The initial input layer neurons accounts for each of those features. Additional layers reduce this number drastically.
             * Initial input layer: 8787
             * Hidden layer 1: 80
