@@ -45,19 +45,19 @@ Removed variables are:
 ## Compiling, Training, and Evaluating the Model
 
 * How many neurons, layers, and activation functions did you select for your neural network model, and why?
-    ### Original Model
-        * Neurons: The initial input layer includes dummies for each ASK_AMT, which makde for a very large feature set. The initial input layer neurons accounts for each of those features. Additional layers reduce this number drastically.
-            * Initial input layer: 8787
-            * Hidden layer 1: 80
-            * Hidden layer 2: 30
-            * Total: 8897
-        * Layers: 3 (initial input layer + 2 hidden layers)
-        * Activation functions: Relu and sigmoid functions were chosen because the target is binary and feature values are positive. 
-            * Initial input layer: relu
-            * Hidden layer 1: relu
-            * Hidden layer 2: sigmoid
-        * Optimizer: adam
-        * Results: Loss: 0.9265857338905334, Accuracy: 0.7149854302406311
+### Original Model
+* Neurons: The initial input layer includes dummies for each ASK_AMT, which makde for a very large feature set. The initial input layer neurons accounts for each of those features. Additional layers reduce this number drastically.
+   * Initial input layer: 8787
+   * Hidden layer 1: 80
+   * Hidden layer 2: 30
+   * Total: 8897
+* Layers: 3 (initial input layer + 2 hidden layers)
+* Activation functions: Relu and sigmoid functions were chosen because the target is binary and feature values are positive. 
+   * Initial input layer: relu
+   * Hidden layer 1: relu
+   * Hidden layer 2: sigmoid
+* Optimizer: adam
+* Results: Loss: 0.9265857338905334, Accuracy: 0.7149854302406311
 ### Optimization 1
 * Neurons: The initial input layer for this optimization does not include dummies for ASK_AMT, so the total number of features is significantly less than the original model. I added an additional neuron to hidden layer 1 simply to see what would happen, and added an additional hidden layer to see if that produced more accurate results. 
      * Initial input layer: 49
@@ -75,62 +75,61 @@ Removed variables are:
 * Results: Loss: 0.5614355802536011, Accuracy: 0.7325947284698486
 
 The results for Optimization 1 are 2 points higher than the original model. 
-
-    ### Optimization 2
-        * Neurons: I added more CLASSIFICATION and APPLICATION_TYPE features, but removed ASK_AMT and SPECIAL_CONSIDERATIONS to see if this would have any impact on the results. I started with 67 features, which I used for the number of neurons in the initial input layer. 
-            * Initial input layer: 67
-            * Hidden layer 1: 68
-            * Hidden layer 2: 40
-            * Hidden layer 3: 10
-            * Total: 185
-        * Layers: 4 (initial input layer + 3 hidden layers)
-        * Activation functions: I tried all sigmoid to see if that would help increase accuracy. 
-            * Initial input layer: sigmoid
-            * Hidden layer 1: sigmoid
-            * Hidden layer 2: sigmoid
-            * Hidden layer 3: sigmoid
-        * Optimizer: sgd
-        * Results:  Loss: 0.563554584980011, Accuracy: 0.728396475315094
+### Optimization 2
+* Neurons: I added more CLASSIFICATION and APPLICATION_TYPE features, but removed ASK_AMT and SPECIAL_CONSIDERATIONS to see if this would have any impact on the results. I started with 67 features, which I used for the number of neurons in the initial input layer. 
+   * Initial input layer: 67
+   * Hidden layer 1: 68
+   * Hidden layer 2: 40
+   * Hidden layer 3: 10
+   * Total: 185
+* Layers: 4 (initial input layer + 3 hidden layers)
+* Activation functions: I tried all sigmoid to see if that would help increase accuracy. 
+   * Initial input layer: sigmoid
+   * Hidden layer 1: sigmoid
+   * Hidden layer 2: sigmoid
+   * Hidden layer 3: sigmoid
+* Optimizer: sgd
+* Results:  Loss: 0.563554584980011, Accuracy: 0.728396475315094
 
 The accuracy for Optimization 2 is better than the original model but worse than Optimization 1. 
 
-    ### Optimization 3
-        * Neurons: I dropped CLASSIFICATION, ASK_AMT and SPECIAL_CONSIDERATIONS to see if this would have any impact on the results. I kept the same APPLICATION_TYPE features as Optimizer 2. I started with 67 features, which I used for the number of neurons in the initial input layer. 
-            * Initial input layer: 30
-            * Hidden layer 1: 42
-            * Hidden layer 2: 21
-            * Hidden layer 3: 10
-            * Total: 103
-        * Layers: 4 (initial input layer + 3 hidden layers)
-        * Activation functions: I alternated relu and sigmoid.
-            * Initial input layer: relu
-            * Hidden layer 1: sigmoid
-            * Hidden layer 2: relu
-            * Hidden layer 3: sigmoid
-        * Optimizer: adam
-        * Results:  Loss: 0.571895182132721, Accuracy: 0.7259474992752075
+### Optimization 3
+* Neurons: I dropped CLASSIFICATION, ASK_AMT and SPECIAL_CONSIDERATIONS to see if this would have any impact on the results. I kept the same APPLICATION_TYPE features as Optimizer 2. I started with 67 features, which I used for the number of neurons in the initial input layer. 
+   * Initial input layer: 30
+   * Hidden layer 1: 42
+   * Hidden layer 2: 21
+   * Hidden layer 3: 10
+   * Total: 103
+* Layers: 4 (initial input layer + 3 hidden layers)
+* Activation functions: I alternated relu and sigmoid.
+   * Initial input layer: relu
+   * Hidden layer 1: sigmoid
+   * Hidden layer 2: relu
+   * Hidden layer 3: sigmoid
+* Optimizer: adam
+* Results:  Loss: 0.571895182132721, Accuracy: 0.7259474992752075
     
-    The results were slightly worse than Optimization 2. 
+The results were slightly worse than Optimization 2. 
 
-    ### Optimization 4
-        * Neurons: I used the same preproccessing as Optimization 2 for a total of 70 features. I doubled the number of neurons in the first input layer because the best optimizations use 2-3 times the number of features. I added 2 additional layers to see if I could get more accurate results. 
-            * Initial input layer: 70
-            * Hidden layer 1: 140
-            * Hidden layer 2: 70
-            * Hidden layer 3: 35
-            * Hidden layer 4: 18
-            * Hidden layer 5: 9
-            * Total: 342 
-        * Layers: 6 (initial input layer + 5 hidden layers)
-        * Activation functions: I used sigmoid for all layers
-            * Initial input layer: sigmoid
-            * Hidden layer 1: sigmoid
-            * Hidden layer 2: sigmoid
-            * Hidden layer 3: sigmoid
-            * Hidden layer 4: sigmoid
-            * Hidden layer 5: sigmoid
-        * Optimizer: adam
-        * Results:  Loss: 0.5630967617034912, Accuracy: 0.7278134226799011
+### Optimization 4
+* Neurons: I used the same preproccessing as Optimization 2 for a total of 70 features. I doubled the number of neurons in the first input layer because the best optimizations use 2-3 times the number of features. I added 2 additional layers to see if I could get more accurate results. 
+   * Initial input layer: 70
+   * Hidden layer 1: 140
+   * Hidden layer 2: 70
+   * Hidden layer 3: 35
+   * Hidden layer 4: 18
+   * Hidden layer 5: 9
+   * Total: 342 
+* Layers: 6 (initial input layer + 5 hidden layers)
+* Activation functions: I used sigmoid for all layers
+   * Initial input layer: sigmoid
+   * Hidden layer 1: sigmoid
+   * Hidden layer 2: sigmoid
+   * Hidden layer 3: sigmoid
+   * Hidden layer 4: sigmoid
+   * Hidden layer 5: sigmoid
+* Optimizer: adam
+* Results:  Loss: 0.5630967617034912, Accuracy: 0.7278134226799011
     
 * Were you able to achieve the target model performance?
     I was not able to achieve the target model performance. I think the dataset is simply too small.
