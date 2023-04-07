@@ -144,3 +144,21 @@ The results were slightly worse than Optimization 2.
 
 # Summary
 The best results of these was Optimization 1, but barely so. There was not a significant difference between the original model and the 4 optimizations. I think the limitation is that the dataset is still very small, only 34,000 records. I recommend continuing to collect data and fine-tune the model over time to achieve more accurate results. 
+
+# Model Recommendation
+As stated above in the summary, Optimization 1 is the best model. I recommend using this model until more data can be collected and a more accurate model created. 
+
+Model: 
+* Neurons: 
+     * Initial input layer: 49
+     * Hidden layer 1: 50
+     * Hidden layer 2: 30
+     * Hidden layer 3: 10
+     * Total: 139
+* Layers: 4 (initial input layer + 3 hidden layers)
+* Activation functions: I tried relu in the initial and first 2 hidden layers but swtiched to sigmoid to see if that would help increase accuracy. 
+     * Initial input layer: relu
+     * Hidden layer 1: relu
+     * Hidden layer 2: relu
+     * Hidden layer 3: sigmoid
+* Optimizer: adam
